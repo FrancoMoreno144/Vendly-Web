@@ -55,7 +55,21 @@ contactForm.addEventListener('submit', function (event) {
     setTimeout(() => (formAlert.style.display = 'none'), 200); // se oculta suavemente
   }, 5000);
 
+  function setTheme(theme) {
+  htmlEl.classList.add("transition");
+  htmlEl.setAttribute("data-bs-theme", theme);
+  localStorage.setItem("theme", theme);
+  btn.textContent = theme === "light" ? "Modo oscuro" : "Modo claro";
+  btn.className = theme === "light" ? "btn btn-dark ms-lg-3 mt-2 mt-lg-0" : "btn btn-light ms-lg-3 mt-2 mt-lg-0";
+  vendlyLogos.forEach(logo => {
+    logo.src = theme === "dark" ? logo.dataset.dark : logo.dataset.light;
+  });
+  navbar.setAttribute("data-bs-theme", theme);
+  setTimeout(() => htmlEl.classList.remove("transition"), 600);
+}
+
   // Reiniciar formulario
   form.reset();
 });
+
 
