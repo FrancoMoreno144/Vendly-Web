@@ -321,10 +321,8 @@
     // Navbar
     if (navbar) {
   navbar.setAttribute("data-bs-theme", theme);
-  navbar.classList.toggle("bg-dark", theme === "dark");
-  navbar.classList.toggle("bg-light", theme === "light");
     }
-  }
+}
 
   const savedTheme = localStorage.getItem("theme") || "light";
   setTheme(savedTheme);
@@ -345,6 +343,7 @@
 
 </body>
 </html>
+
 
 
 
