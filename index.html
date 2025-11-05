@@ -1,362 +1,295 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vendly™ — Sistema de gestión de ventas</title>
-<meta name="description" content="Vendly — sistema de gestión de ventas y productos">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vendly™ — Sistema de gestión de ventas</title>
+  <meta name="description" content="Vendly — sistema de gestión de ventas y productos">
+  <meta name="author" content="Black Masa Inc.">
+  <meta name="theme-color" content="#0d6efd">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-
-<link rel="stylesheet" href="css/style.css">
-
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-
-<!--NavBar-->
-<nav class="navbar navbar-expand-lg fixed-top shadow-sm" data-bs-theme="light">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img id="vendlyLogo" src="img/vendly.png" data-light="img/vendly.png" data-dark="img/vendly-blanco.png" alt="Vendly" height="36" class="vendlyLogo-header me-2">
-      <span class="fw-bold"> </span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <img src="img/blackmasa.png" alt="Black Masa" height="36" class="me-2">
-    <div class="container py-5 text-center">
-    <button id="themeToggle" class="btn btn-dark">Modo oscuro</button>
-  </div>
-    <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
-        <li class="nav-item"><a class="nav-link" href="#how">Cómo funciona</a></li>
-        <li class="nav-item"><a class="nav-link" href="#plan">Planes</a></li>
-        <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!--Resumen y presentacion-->
-<br>
-<br>
-<br>
-<br>
-<header class="hero d-flex align-items-center" id="home">
-  <div class="container text-center py-5">
-    <div class="row align-items-center">
-      <div class="col-lg-6 text-lg-start" data-aos="fade-right">
-        <h1 class="display-5 fw-bold">Vendly™ — Gestión de ventas sencilla</h1>
-        <p class="lead">Registra productos, procesa ventas, genera facturas en PDF y administra tu tienda con facilidad.</p>
-        <a href="#contact" class="btn btn-primary btn-lg me-2">Contáctanos</a>
-        <a href="#features" class="btn btn-outline-primary">Ver características</a>
-      </div>
-      <div class="col-lg-6 text-center mt-4 mt-lg-0" data-aos="fade-left">
-        <img id="vendlyLogo" src="img/vendly.png" data-light="img/vendly.png" data-dark="img/vendly-blanco.png" alt="Vendly" height="36" class="vendlyLogo-header me-2">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top shadow-sm" role="navigation">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img class="vendlyLogo me-2" src="img/vendly.png" data-light="img/vendly.png" data-dark="img/vendly-blanco.png" alt="Vendly" height="36">
+        <span class="fw-bold">Vendly™</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#features">Características</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how">Cómo funciona</a></li>
+          <li class="nav-item"><a class="nav-link" href="#plan">Planes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Equipo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+        </ul>
+        <button id="themeToggle" class="btn btn-dark ms-lg-3 mt-2 mt-lg-0">Modo oscuro</button>
       </div>
     </div>
-  </div>
-</header>
+  </nav>
 
-<!--Caracteristcas-->
-<section class="py-5" id="features">
-  <div class="container">
-    <h2 class="mb-4 text-center" data-aos="fade-up">Características destacadas</h2>
-    <div class="row g-4">
-      <div class="d-flex flex-wrap justify-content-center gap-4">
-        <!--Carac Generales-->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Caracteristicas Generales</h5>
-            <p class="card-text">Sistema de cuentas con permisos, parametrización y copias de seguridad</p>
-          </div>
+  <!-- Header -->
+  <header class="hero d-flex align-items-center" id="home">
+    <div class="container text-center py-5 mt-5">
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-lg-start" data-aos="fade-right">
+          <h1 class="display-5 fw-bold">Vendly™ — Gestión de ventas sencilla</h1>
+          <p class="lead">Registra productos, procesa ventas, genera facturas en PDF y administra tu tienda con facilidad.</p>
+          <a href="#contact" class="btn btn-primary btn-lg me-2">Contáctanos</a>
+          <a href="#features" class="btn btn-outline-primary">Ver características</a>
         </div>
-      </div>
-      <!--Gestion de ventas-->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Gestión de Ventas</h5>
-            <p class="card-text">Pedidos, ventas, registro de clientes</p>
-          </div>
-        </div>
-      </div>
-      <!--Gestion de inventario-->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Gestión de inventario</h5>
-            <p class="card-text">Alertas y control de stock, ajustes de inventario</p>
-          </div>
-        </div>
-      </div>
-      <!--Gestion de clientes-->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Gestión de clientes</h5>
-            <p class="card-text">Registro, historial e información del cliente</p>
-          </div>
-        </div>
-      </div>
-      <!--Gestion de informes-->
-      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Gestión de informes</h5>
-            <p class="card-text">Informes de venta, stock y clientes</p>
-          </div>
-        </div>
-      </div>
-      <!--Fin de caracteristicas-->
-      </div>
-    </div>
-  </div>
-</section>
-
-<!--Funciones-->
-<section class="bg-light py-5" id="how">
-  <div class="container">
-    <h2 class="mb-4 text-center" data-aos="fade-up">¿Cómo funciona?</h2>
-    <div class="row g-4">
-      <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
-        <div class="p-4">
-          <h5>Registrar productos</h5>
-          <p>Agrega código, nombre, stock y categoría para cada producto.</p>
-        </div>
-      </div>
-      <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
-        <div class="p-4">
-          <h5>Punto de venta</h5>
-          <p>Interfaz de caja adaptable según el negocio (almacén o restaurante).</p>
-        </div>
-      </div>
-      <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
-        <div class="p-4">
-          <h5>Facturación</h5>
-          <p>Genera y guarda facturas en PDF y consulta el historial de ventas.</p>
+        <div class="col-lg-6 text-center mt-4 mt-lg-0" data-aos="fade-left">
+          <img class="vendlyLogo img-fluid" src="img/vendly.png" data-light="img/vendly.png" data-dark="img/vendly-blanco.png" alt="Logo Vendly" style="max-height: 250px;">
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!--Planes-->
-<section class="container my-5 text-center" id="plan">
-  <h2 class="mb-4">Planes de entrega</h2>
-  <div class="d-flex flex-wrap justify-content-center gap-4">
-    <!--SBO-->
-  <div class="" data-aos="zoom-in" data-aos-delay="100">
-    <div class="card p-3 shadow-sm" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title fw-bold">Sistema Básico Operativo</h5>
-        <h6 class="text-secondary fw-bold">15 Días Hábiles</h6>
-        <br>
-        <p class="card-text">
-          En dos semanas el cliente contará con Vendly instalado y los módulos esenciales listos para trabajar.
-        </p>
+  <!-- Características -->
+  <section class="py-5" id="features">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">Características destacadas</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Características Generales</h5>
+              <p class="card-text">Sistema de cuentas con permisos, parametrización y copias de seguridad.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Gestión de Ventas</h5>
+              <p class="card-text">Pedidos, ventas y registro de clientes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Gestión de Inventario</h5>
+              <p class="card-text">Alertas y control de stock, ajustes de inventario.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Gestión de Clientes</h5>
+              <p class="card-text">Registro, historial e información del cliente.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Gestión de Informes</h5>
+              <p class="card-text">Informes de venta, stock y clientes.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-<!--Personalizacion-->
-  <div class="" data-aos="zoom-in" data-aos-delay="200">
-      <div class="card p-3 shadow-sm" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title fw-bold">Personalización</h5>
-        <h6 class="text-secondary fw-bold">20-23 Días Hábiles</h6>
-        <br>
-        <p class="card-text">
-          En un mes se entregará el sistema adaptado al negocio, con reportes ajustados y procesos totalmente configurados.
-        </p>
+  </section>
+
+  <!-- Cómo funciona -->
+  <section class="bg-light py-5" id="how">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">¿Cómo funciona?</h2>
+      <div class="row g-4">
+        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-4">
+            <h5>Registrar productos</h5>
+            <p>Agrega código, nombre, stock y categoría para cada producto.</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-4">
+            <h5>Punto de venta</h5>
+            <p>Interfaz de caja adaptable según el negocio (almacén o restaurante).</p>
+          </div>
+        </div>
+        <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-4">
+            <h5>Facturación</h5>
+            <p>Genera y guarda facturas en PDF y consulta el historial de ventas.</p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- Planes -->
+  <section class="container my-5 text-center" id="plan">
+    <h2 class="mb-4">Planes de entrega</h2>
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+      <div data-aos="zoom-in" data-aos-delay="100">
+        <div class="card p-3 shadow-sm" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Sistema Básico Operativo</h5>
+            <h6 class="text-secondary fw-bold">15 Días Hábiles</h6>
+            <p class="card-text mt-3">
+              En dos semanas el cliente contará con Vendly instalado y los módulos esenciales listos para trabajar.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div data-aos="zoom-in" data-aos-delay="200">
+        <div class="card p-3 shadow-sm" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title fw-bold">Personalización</h5>
+            <h6 class="text-secondary fw-bold">20-23 Días Hábiles</h6>
+            <p class="card-text mt-3">
+              En un mes se entregará el sistema adaptado al negocio, con reportes ajustados y procesos totalmente configurados.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  </div>
-</div>
-</section>
+  </section>
 
-
-<!--Equipo de desarrollo y mantenimiento-->
-<section class="py-5" id="team">
-  <div class="container">
-    <h2 class="mb-4 text-center" data-aos="fade-up">Equipo</h2>
-    <div class="row g-4 justify-content-center">
-      <!--Inicio del team-->
-      <!--Tomi-->
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="100">
-        <div class="card p-3 shadow-sm">
-          <div class="card-body">
-            <h6 class="mb-1">Tomás Romero</h6>
-            <small class="text-muted">Diseñador Gráfico</small>
-          </div>
+  <!-- Equipo -->
+  <section class="py-5" id="team">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">Equipo</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card p-3 shadow-sm"><h6>Tomás Romero</h6><small class="text-muted">Diseñador Gráfico</small></div>
+        </div>
+        <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-3 shadow-sm"><h6>Yhorman Montilla</h6><small class="text-muted">Analista Funcional</small></div>
+        </div>
+        <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card p-3 shadow-sm"><h6>Franco Moreno</h6><small class="text-muted">Programador Web</small></div>
+        </div>
+        <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="400">
+          <div class="card p-3 shadow-sm"><h6>Tobias Balsano</h6><small class="text-muted">Consultor</small></div>
+        </div>
+        <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="500">
+          <div class="card p-3 shadow-sm"><h6>Gabriel Andradez</h6><small class="text-muted">Atención al Cliente</small></div>
         </div>
       </div>
-      <!--Yhorman-->
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="200">
-        <div class="card p-3 shadow-sm">
-          <div class="card-body">
-            <h6 class="mb-1">Yhorman Montilla</h6>
-            <small class="text-muted">Analista Funcional</small>
-          </div>
-        </div>
-      </div>
-      <!--Franco-->
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="300">
-        <div class="card p-3 shadow-sm">
-          <div class="card-body">
-            <h6 class="mb-1">Franco Moreno</h6>
-            <small class="text-muted">Programador Web</small>
-          </div>
-        </div>
-      </div>
-      <!--Tobias-->
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="400">
-        <div class="card p-3 shadow-sm">
-          <div class="card-body">
-            <h6 class="mb-1">Tobias Balsano</h6>
-            <small class="text-muted">Consultor</small>
-          </div>
-        </div>
-      </div>
-      <!--Gabriel-->
-      <div class="col-6 col-md-3 text-center" data-aos="zoom-in" data-aos-delay="500">
-        <div class="card p-3 shadow-sm">
-          <div class="card-body">
-            <h6 class="mb-1">Gabriel Andradez</h6>
-            <small class="text-muted">Atención al Cliente</small>
-          </div>
-        </div>
-      </div>
-      <!--Fin del team-->
     </div>
-  </div>
-</section>
+  </section>
 
-<!--Contacto-->
-<section class="py-5" id="contact">
-  <div class="container">
-    <h2 class="mb-4 text-center" data-aos="fade-up">Contacto</h2>
-    <div class="row justify-content-center">
-      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <form id="contactForm">
-              <div class="mb-3">
-                <label for="name" class="form-label">Nombre</label>
-                <input type="text" id="name" name="user_name" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="user_email" class="form-control" required>
-              </div>
-              <div class="mb-3">
-                <label for="message" class="form-label">Mensaje</label>
-                <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
-              </div>
-              <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">Usamos EmailJS para enviar el mensaje.</small>
-                <div>
+  <!-- Contacto -->
+  <section class="py-5" id="contact">
+    <div class="container">
+      <h2 class="mb-4 text-center" data-aos="fade-up">Contacto</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <form id="contactForm">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input type="text" id="name" name="user_name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" id="email" name="user_email" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Mensaje</label>
+                  <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">Usamos EmailJS para enviar el mensaje.</small>
                   <button type="submit" class="btn btn-primary">Enviar</button>
                 </div>
-              </div>
-            </form>
-            <div id="formAlert" class="mt-3" style="display:none;"></div>
+              </form>
+              <div id="formAlert" class="mt-3" style="display:none;"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!--Footer-->
-<footer class="py-4 bg-dark text-light">
-  <div class="container text-center small">
-    &copy; 2025 Black Masa Inc. — Vendly™. Todos los derechos reservados.
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-light">
+    <div class="container text-center small">
+      &copy; 2025 Black Masa Inc. — Vendly™. Todos los derechos reservados.
+    </div>
+  </footer>
 
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-<script src="js/main.js"></script>
+  <!-- Script de funciones -->
+  <script>
+    // Modo oscuro
+    const htmlEl = document.documentElement;
+    const btn = document.getElementById("themeToggle");
+    const vendlyLogos = document.querySelectorAll(".vendlyLogo");
+    const navbar = document.querySelector(".navbar");
 
-<!--Modo oscuro-->
-<script>
-  const htmlEl = document.documentElement;
-  const btn = document.getElementById("themeToggle");
-  const vendlyLogos = document.querySelectorAll("#vendlyLogo");
-  const navbar = document.querySelector(".navbar");
-
-  function setTheme(theme) {
-    htmlEl.setAttribute("data-bs-theme", theme);
-    localStorage.setItem("theme", theme);
-
-    if (theme === "light") {
-      btn.textContent = "Modo oscuro";
-      btn.classList.remove("btn-light");
-      btn.classList.add("btn-dark");
-    } else {
-      btn.textContent = "Modo claro";
-      btn.classList.remove("btn-dark");
-      btn.classList.add("btn-light");
+    function setTheme(theme) {
+      htmlEl.setAttribute("data-bs-theme", theme);
+      localStorage.setItem("theme", theme);
+      btn.textContent = theme === "light" ? "Modo oscuro" : "Modo claro";
+      btn.className = theme === "light" ? "btn btn-dark ms-lg-3 mt-2 mt-lg-0" : "btn btn-light ms-lg-3 mt-2 mt-lg-0";
+      vendlyLogos.forEach(logo => {
+        logo.src = theme === "dark" ? logo.dataset.dark : logo.dataset.light;
+      });
+      navbar.setAttribute("data-bs-theme", theme);
     }
 
-    vendlyLogos.forEach(logo => {
-      logo.src = theme === "dark"
-        ? logo.dataset.dark
-        : logo.dataset.light;
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+    btn.addEventListener("click", () => {
+      const newTheme = htmlEl.getAttribute("data-bs-theme") === "light" ? "dark" : "light";
+      setTheme(newTheme);
     });
 
-    // Navbar
-    if (navbar) {
-  navbar.setAttribute("data-bs-theme", theme);
+    // AOS
+    AOS.init({ duration: 1000, once: true });
+
+    // EmailJS
+    emailjs.init('vt1akY_jssjE-uek8');
+    const form = document.getElementById('contactForm');
+    const alertBox = document.getElementById('formAlert');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      emailjs.sendForm('service_id', 'template_id', this)
+        .then(() => {
+          alertBox.textContent = 'Mensaje enviado con éxito.';
+          alertBox.className = 'alert alert-success';
+          alertBox.style.display = 'block';
+          form.reset();
+        }, () => {
+          alertBox.textContent = 'Error al enviar el mensaje. Intenta nuevamente.';
+          alertBox.className = 'alert alert-danger';
+          alertBox.style.display = 'block';
+        });
+    });
+  </script>
+
+  <!-- Hover animación opcional -->
+  <style>
+    .card:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
     }
-}
-
-  const savedTheme = localStorage.getItem("theme") || "light";
-  setTheme(savedTheme);
-
-  btn.addEventListener("click", () => {
-    const current = htmlEl.getAttribute("data-bs-theme");
-    const newTheme = current === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  });
-</script>
-
-
-  
-<script>
-  AOS.init({ duration: 1000, once: true });
-  emailjs.init('vt1akY_jssjE-uek8');
-</script>
-
+    [data-bs-theme="dark"] footer {
+      background-color: #121212;
+    }
+  </style>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
