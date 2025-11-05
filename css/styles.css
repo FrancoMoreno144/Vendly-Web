@@ -86,7 +86,6 @@ footer,
   align-items: center;
   justify-content: center;
   text-align: center;
-   padding-top: 100px;
   padding: 4rem 2rem;
   transition: background 0.6s ease;
 }
@@ -230,4 +229,5 @@ html.transition * {
     margin-bottom: 1.5rem;
   }
 }
+
 
