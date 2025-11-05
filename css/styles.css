@@ -1,125 +1,149 @@
-:root{
-  --accent:#0d6efd;
-}
-
-body{
+/* ======= General ======= */
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
-  padding-top:70px; 
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  transition: background-color 0.6s ease, color 0.6s ease;
 }
 
-/* ==== HERO ==== */
-.hero{
-  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-  padding: 4.5rem 0;
-  color: white;
-}
-.hero-logo{
-  max-width: 320px;
-  filter: drop-shadow(0 6px 16px rgba(0,0,0,0.2));
-  animation: float 3s ease-in-out infinite alternate;
-}
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-15px); }
+/* ======= Transición general de tema ======= */
+html[data-bs-theme="light"],
+html[data-bs-theme="dark"] {
+  transition: background-color 0.6s ease, color 0.6s ease;
 }
 
-/* ==== NAVBAR VIDRIO TIPO MACOS ==== */
+.navbar,
+.card,
+footer,
+.btn,
+.hero,
+.nav-link {
+  transition: all 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* ======= Navbar estilo vidrio ======= */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.35) !important;
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.4s ease;
-  z-index: 1030;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* efecto más opaco al hacer scroll */
+/* Versión al hacer scroll */
 .navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.72) !important;
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px) saturate(200%);
+  -webkit-backdrop-filter: blur(16px) saturate(200%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Modo oscuro */
-.navbar[data-bs-theme="dark"] {
-  background-color: rgba(18, 18, 18, 0.4) !important;
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-.navbar.scrolled[data-bs-theme="dark"] {
-  background-color: rgba(18, 18, 18, 0.65) !important;
-  -webkit-backdrop-filter: blur(18px);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+/* Tema oscuro */
+[data-bs-theme="dark"] .navbar {
+  background: rgba(18, 18, 18, 0.3);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ==== TARJETAS ==== */
-.card{
+[data-bs-theme="dark"] .navbar.scrolled {
+  background: rgba(18, 18, 18, 0.75);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ======= Navbar links ======= */
+.navbar .nav-link {
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #0d6efd;
+}
+
+[data-bs-theme="dark"] .navbar .nav-link {
+  color: #f1f1f1;
+}
+
+[data-bs-theme="dark"] .navbar .nav-link:hover {
+  color: #0d6efd;
+}
+
+/* ======= Hero Section ======= */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  display: flex;
+  align-items: center;
+  transition: background 0.6s ease;
+}
+
+[data-bs-theme="dark"] .hero {
+  background: linear-gradient(135deg, #0d1117, #1b1f24);
+}
+
+/* ======= Cards ======= */
+.card {
   border: none;
-  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
-}
-.card:hover{
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-  background: rgba(13,110,253,0.05);
-}
-.card-title {
-  color: var(--accent);
-  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 1rem;
 }
 
-/* ==== BOTONES ==== */
-.btn-primary {
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+[data-bs-theme="dark"] .card {
+  background: rgba(30, 30, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ======= Botones ======= */
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
   transition: all 0.3s ease;
 }
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(13,110,253,0.3);
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
-/* ==== SECCIONES ==== */
-#features { background: #f8f9fa; }
-#how { background: linear-gradient(90deg,#e3f2fd 0%, #f8f9fa 100%);}
-#team { background: #ffffff; }
-#contact { background: #f1f3f5; }
-
-/* ==== FOOTER ==== */
-footer{
-  border-top: 1px solid rgba(255,255,255,0.04);
+/* ======= Footer ======= */
+footer {
+  background-color: #0d6efd;
+  color: #fff;
 }
 
-/* ==== ANIMACIONES HERO ==== */
-.hero h1, .hero p {
-  animation: fadeInUp 1s ease forwards;
-  opacity: 0;
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+[data-bs-theme="dark"] footer {
+  background-color: #121212;
 }
 
-/* ==== RESPONSIVE ==== */
-@media (max-width: 576px){
-  .hero{ padding: 3rem 0; }
-  .hero-logo{ max-width: 220px; }
+/* ======= Animaciones ======= */
+a, button {
+  transition: all 0.3s ease;
 }
 
-/* ==== ALERTAS ==== */
-.alert {
-  transition: opacity 0.5s ease;
+img {
+  user-select: none;
 }
 
-/* ==== LOGO HEADER ==== */
-.vendlyLogo-header {
-  width: 100%;
-  max-width: 250px; 
-  height: auto;
-  display: block;
-  margin: 0 auto;
+/* ======= Transición suave entre temas ======= */
+html.transition,
+html.transition * {
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
 }
 
-
-
+/* ======= Responsivo ======= */
+@media (max-width: 991px) {
+  .navbar {
+    background: rgba(255, 255, 255, 0.7);
+  }
+  [data-bs-theme="dark"] .navbar {
+    background: rgba(20, 20, 20, 0.7);
+  }
+}
