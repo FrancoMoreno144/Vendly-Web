@@ -234,29 +234,47 @@
 
   <!-- Script de funciones -->
   <script>
-    // Modo oscuro
-    const htmlEl = document.documentElement;
-    const btn = document.getElementById("themeToggle");
-    const vendlyLogos = document.querySelectorAll(".vendlyLogo");
-    const navbar = document.querySelector(".navbar");
+// ===========================
+// MODO OSCURO / CLARO con transición suave
+// ===========================
+const htmlEl = document.documentElement;
+const btn = document.getElementById("themeToggle");
+const vendlyLogos = document.querySelectorAll(".vendlyLogo");
+const navbar = document.querySelector(".navbar");
 
-    function setTheme(theme) {
-      htmlEl.setAttribute("data-bs-theme", theme);
-      localStorage.setItem("theme", theme);
-      btn.textContent = theme === "light" ? "Modo oscuro" : "Modo claro";
-      btn.className = theme === "light" ? "btn btn-dark ms-lg-3 mt-2 mt-lg-0" : "btn btn-light ms-lg-3 mt-2 mt-lg-0";
-      vendlyLogos.forEach(logo => {
-        logo.src = theme === "dark" ? logo.dataset.dark : logo.dataset.light;
-      });
-      navbar.setAttribute("data-bs-theme", theme);
-    }
+function setTheme(theme) {
+  htmlEl.classList.add("transition");
+  htmlEl.setAttribute("data-bs-theme", theme);
+  localStorage.setItem("theme", theme);
 
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    btn.addEventListener("click", () => {
-      const newTheme = htmlEl.getAttribute("data-bs-theme") === "light" ? "dark" : "light";
-      setTheme(newTheme);
-    });
+  // Cambiar texto y color del botón
+  btn.textContent = theme === "light" ? "Modo oscuro" : "Modo claro";
+  btn.className = theme === "light" 
+    ? "btn btn-dark ms-lg-3 mt-2 mt-lg-0" 
+    : "btn btn-light ms-lg-3 mt-2 mt-lg-0";
+
+  // Cambiar logotipos según tema
+  vendlyLogos.forEach(logo => {
+    logo.src = theme === "dark" ? logo.dataset.dark : logo.dataset.light;
+  });
+
+  // Actualizar atributo del navbar
+  navbar.setAttribute("data-bs-theme", theme);
+
+  // Quitar clase de transición luego de animar
+  setTimeout(() => htmlEl.classList.remove("transition"), 600);
+}
+
+// Aplicar tema guardado
+const savedTheme = localStorage.getItem("theme") || "light";
+setTheme(savedTheme);
+
+// Botón de alternar tema
+btn.addEventListener("click", () => {
+  const newTheme = htmlEl.getAttribute("data-bs-theme") === "light" ? "dark" : "light";
+  setTheme(newTheme);
+});
+
 
     // AOS
     AOS.init({ duration: 1000, once: true });
@@ -303,6 +321,7 @@
   </script>
 </body>
 </html>
+
 
 
 
