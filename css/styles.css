@@ -24,6 +24,9 @@ body{
   to { transform: translateY(-15px); }
 }
 
+.navbar, body {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
 
 .card{
   border: none;
@@ -87,4 +90,5 @@ footer{
   display: block;
   margin: 0 auto;
 }
+
 
