@@ -290,15 +290,36 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="js/main.js"></script>
 
+<!--Modo oscuro-->
 <script>
     const htmlEl = document.documentElement;
     const btn = document.getElementById("themeToggle");
 
+    function setTheme(theme) {
+      htmlEl.setAttribute("data-bs-theme", theme);
+      localStorage.setItem("theme", theme);
+
+      
+      if (theme === "light") {
+        btn.textContent = "🌙 Modo oscuro";
+        btn.classList.remove("btn-light");
+        btn.classList.add("btn-dark");
+      } else {
+        btn.textContent = "☀️ Modo claro";
+        btn.classList.remove("btn-dark");
+        btn.classList.add("btn-light");
+      }
+    }
+
+    
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+
+    
     btn.addEventListener("click", () => {
-      const currentTheme = htmlEl.getAttribute("data-bs-theme");
-      const newTheme = currentTheme === "light" ? "dark" : "light";
-      htmlEl.setAttribute("data-bs-theme", newTheme);
-      btn.textContent = newTheme === "light" ? "Modo oscuro" : "Modo claro";
+      const current = htmlEl.getAttribute("data-bs-theme");
+      const newTheme = current === "light" ? "dark" : "light";
+      setTheme(newTheme);
     });
 </script>
   
@@ -309,6 +330,7 @@
 
 </body>
 </html>
+
 
 
 
