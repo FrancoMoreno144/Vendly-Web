@@ -296,12 +296,12 @@
   const htmlEl = document.documentElement;
   const btn = document.getElementById("themeToggle");
   const vendlyLogos = document.querySelectorAll("#vendlyLogo");
+  const navbar = document.querySelector(".navbar");
 
   function setTheme(theme) {
     htmlEl.setAttribute("data-bs-theme", theme);
     localStorage.setItem("theme", theme);
 
-    
     if (theme === "light") {
       btn.textContent = "Modo oscuro";
       btn.classList.remove("btn-light");
@@ -312,25 +312,34 @@
       btn.classList.add("btn-light");
     }
 
-    
     vendlyLogos.forEach(logo => {
       logo.src = theme === "dark"
-    ? logo.dataset.dark
-    : logo.dataset.light;
+        ? logo.dataset.dark
+        : logo.dataset.light;
     });
+
+    // Navbar
+    if (navbar) {
+      if (theme === "dark") {
+        navbar.classList.remove("navbar-light", "bg-light");
+        navbar.classList.add("navbar-dark", "bg-dark");
+      } else {
+        navbar.classList.remove("navbar-dark", "bg-dark");
+        navbar.classList.add("navbar-light", "bg-light");
+      }
+    }
   }
 
-  
   const savedTheme = localStorage.getItem("theme") || "light";
   setTheme(savedTheme);
 
- 
   btn.addEventListener("click", () => {
     const current = htmlEl.getAttribute("data-bs-theme");
     const newTheme = current === "light" ? "dark" : "light";
     setTheme(newTheme);
   });
 </script>
+
 
   
 <script>
@@ -340,6 +349,7 @@
 
 </body>
 </html>
+
 
 
 
