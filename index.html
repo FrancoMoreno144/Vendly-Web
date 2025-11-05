@@ -34,7 +34,7 @@
     </button>
     <img src="img/blackmasa.png" alt="Black Masa" height="36" class="me-2">
     <div class="container py-5 text-center">
-    <button id="themeToggle" class="btn btn-primary">🌙 Modo oscuro</button>
+    <button id="themeToggle" class="btn btn-primary">Modo oscuro</button>
   </div>
     <div class="collapse navbar-collapse" id="navmenu">
       <ul class="navbar-nav ms-auto">
@@ -291,12 +291,25 @@
 <script src="js/main.js"></script>
 
 <script>
+    const htmlEl = document.documentElement;
+    const btn = document.getElementById("themeToggle");
+
+    btn.addEventListener("click", () => {
+      const currentTheme = htmlEl.getAttribute("data-bs-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+      htmlEl.setAttribute("data-bs-theme", newTheme);
+      btn.textContent = newTheme === "light" ? "Modo oscuro" : "Modo claro";
+    });
+</script>
+  
+<script>
   AOS.init({ duration: 1000, once: true });
   emailjs.init('vt1akY_jssjE-uek8');
 </script>
 
 </body>
 </html>
+
 
 
 
