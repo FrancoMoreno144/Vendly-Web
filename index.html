@@ -291,6 +291,17 @@
       background-color: #121212;
     }
   </style>
+  <script>
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('navbar-opaque');
+    } else {
+      navbar.classList.remove('navbar-opaque');
+    }
+  });
+</script>
 </body>
 </html>
+
 
