@@ -1,11 +1,15 @@
-/* ======= General ======= */
+/* =====================================================
+   ESTILOS GENERALES
+===================================================== */
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   scroll-behavior: smooth;
+  line-height: 1.6;
   transition: background-color 0.6s ease, color 0.6s ease;
+  overflow-x: hidden;
 }
 
-/* ======= Transición general de tema ======= */
+/* Transición global al cambiar tema */
 html[data-bs-theme="light"],
 html[data-bs-theme="dark"] {
   transition: background-color 0.6s ease, color 0.6s ease;
@@ -17,10 +21,12 @@ footer,
 .btn,
 .hero,
 .nav-link {
-  transition: all 0.5s ease, background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+  transition: all 0.4s ease, background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-/* ======= Navbar estilo vidrio macOS ======= */
+/* =====================================================
+   NAVBAR VIDRIO (ESTILO MACOS)
+===================================================== */
 .navbar {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(14px) saturate(180%);
@@ -30,19 +36,15 @@ footer,
   transition: all 0.4s ease;
 }
 
-/* Versión al hacer scroll */
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.55);
   backdrop-filter: blur(18px) saturate(200%);
   -webkit-backdrop-filter: blur(18px) saturate(200%);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
-/* Tema oscuro */
 [data-bs-theme="dark"] .navbar {
   background: rgba(20, 20, 20, 0.25);
-  backdrop-filter: blur(14px) saturate(180%);
-  -webkit-backdrop-filter: blur(14px) saturate(180%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -51,15 +53,19 @@ footer,
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* ======= Navbar links ======= */
+/* =====================================================
+   NAVBAR LINKS
+===================================================== */
 .navbar .nav-link {
   color: #000;
   font-weight: 500;
+  letter-spacing: 0.2px;
   transition: color 0.3s ease;
 }
 
 .navbar .nav-link:hover {
   color: #0d6efd;
+  text-shadow: 0 0 6px rgba(13, 110, 253, 0.2);
 }
 
 [data-bs-theme="dark"] .navbar .nav-link {
@@ -70,83 +76,156 @@ footer,
   color: #0d6efd;
 }
 
-/* ======= Hero Section ======= */
+/* =====================================================
+   HERO SECTION
+===================================================== */
 .hero {
   min-height: 100vh;
   background: linear-gradient(135deg, #f0f4ff, #ffffff);
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
   transition: background 0.6s ease;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 650px;
+  margin: 1rem auto 2rem;
+  opacity: 0.9;
 }
 
 [data-bs-theme="dark"] .hero {
   background: linear-gradient(135deg, #0d1117, #1b1f24);
 }
 
-/* ======= Cards ======= */
+/* =====================================================
+   CARDS (vidrio + animación suave)
+===================================================== */
 .card {
   border: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 [data-bs-theme="dark"] .card {
   background: rgba(30, 30, 30, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* ======= Botones ======= */
+/* =====================================================
+   BOTONES
+===================================================== */
 .btn {
   border-radius: 10px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ======= Footer ======= */
+/* Botón modo oscuro/claro con ícono */
+#themeToggle i {
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
 footer {
   background-color: #0d6efd;
   color: #fff;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  opacity: 0.8;
 }
 
 [data-bs-theme="dark"] footer {
   background-color: #121212;
 }
 
-/* ======= Animaciones ======= */
+/* =====================================================
+   TOASTS (Feedback visual)
+===================================================== */
+.toast-container {
+  z-index: 2000;
+}
+
+.toast {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.toast-body {
+  padding: 1rem 1.25rem;
+}
+
+/* =====================================================
+   ANIMACIONES Y TRANSICIONES
+===================================================== */
 a, button {
   transition: all 0.3s ease;
 }
 
 img {
   user-select: none;
+  -webkit-user-drag: none;
 }
 
-/* ======= Transición suave entre temas ======= */
 html.transition,
 html.transition * {
-  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease !important;
 }
 
-/* ======= Responsivo ======= */
+/* =====================================================
+   RESPONSIVIDAD
+===================================================== */
 @media (max-width: 991px) {
   .navbar {
     background: rgba(255, 255, 255, 0.7);
   }
+
   [data-bs-theme="dark"] .navbar {
     background: rgba(20, 20, 20, 0.7);
   }
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .card {
+    margin-bottom: 1.5rem;
+  }
 }
-
-
