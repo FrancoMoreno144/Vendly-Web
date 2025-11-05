@@ -15,8 +15,8 @@ function setTheme(theme) {
   // Cambiar texto y color del botón
   btn.innerHTML =
     theme === "light"
-      ? '<i class="bi bi-moon"></i> Modo oscuro'
-      : '<i class="bi bi-sun"></i> Modo claro';
+      ? 'Modo oscuro'
+      : 'Modo claro';
   btn.className =
     theme === "light"
       ? "btn btn-dark ms-lg-3 mt-2 mt-lg-0"
@@ -110,7 +110,7 @@ contactForm.addEventListener("submit", async function (event) {
 
     form.reset();
   } catch (error) {
-    console.error("❌ Error al enviar mensaje:", error);
+    console.error("Error al enviar mensaje:", error);
     showToast(
       "Ocurrió un error al enviar el mensaje. Intenta nuevamente.",
       "danger"
@@ -146,3 +146,4 @@ function showToast(message, type = "success") {
   // Eliminar toast del DOM después de ocultarse
   toast.addEventListener("hidden.bs.toast", () => toast.remove());
 }
+
