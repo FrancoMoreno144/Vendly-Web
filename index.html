@@ -72,6 +72,36 @@
       </p>
       <a href="#contact" class="btn btn-primary btn-lg px-4">Contactanos</a>
       <a href="https://francomoreno144.github.io/Vendly-Dashboard/" target="_blank" class="btn btn-vendly shadow-sm"> Mockup </a>
+      <style>
+        .btn-vendly {
+          --vendly-green: #0B8457;
+          background-color: var(--vendly-green);
+          color: #fff;
+          font-weight: 600;
+          border-radius: 0.75rem;
+          padding: 0.75rem 1.5rem;
+          transition: all 0.3s ease;
+        }
+        
+        .btn-vendly:hover {
+          background-color: #096b47;
+          color: #fff;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(11,132,87,0.3);
+        }
+        
+        [data-bs-theme="dark"] .btn-vendly {
+          background-color: #f8f9fa;
+          color: var(--vendly-green);
+          border: 1px solid #dee2e6;
+        }
+        
+        [data-bs-theme="dark"] .btn-vendly:hover {
+          background-color: #e9ecef;
+          color: #096b47;
+          box-shadow: 0 4px 12px rgba(255,255,255,0.15);
+        }
+      </style>
     </div>
   </section>
 
@@ -172,6 +202,7 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
 
 
 
