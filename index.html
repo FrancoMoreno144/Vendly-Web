@@ -14,7 +14,15 @@
 
 <link rel="stylesheet" href="css/style.css">
 
-<link rel="icon" href="img/vendly.png" type="image/png">
+<img 
+  id="vendlyLogo"
+  src="img/vendly.png" 
+  data-light="img/vendly.png" 
+  data-dark="img/vendly-blanco.png" 
+  alt="Vendly" 
+  height="36" 
+  class="me-2">
+
 </head>
 <body>
 
@@ -59,7 +67,15 @@
         <a href="#features" class="btn btn-outline-primary">Ver características</a>
       </div>
       <div class="col-lg-6 text-center mt-4 mt-lg-0" data-aos="fade-left">
-        <img src="img/vendly.png" alt="Vendly logo" class="img-fluid hero-logo">
+        <img 
+  id="vendlyLogo"
+  src="img/vendly.png" 
+  data-light="img/vendly.png" 
+  data-dark="img/vendly-blanco.png" 
+  alt="Vendly" 
+  height="36" 
+  class="me-2">
+
       </div>
     </div>
   </div>
@@ -292,36 +308,45 @@
 
 <!--Modo oscuro-->
 <script>
-    const htmlEl = document.documentElement;
-    const btn = document.getElementById("themeToggle");
+  const htmlEl = document.documentElement;
+  const btn = document.getElementById("themeToggle");
+  const vendlyLogo = document.getElementById("vendlyLogo"); // 👈 nuevo
 
-    function setTheme(theme) {
-      htmlEl.setAttribute("data-bs-theme", theme);
-      localStorage.setItem("theme", theme);
+  function setTheme(theme) {
+    htmlEl.setAttribute("data-bs-theme", theme);
+    localStorage.setItem("theme", theme);
 
-      
-      if (theme === "light") {
-        btn.textContent = "🌙 Modo oscuro";
-        btn.classList.remove("btn-light");
-        btn.classList.add("btn-dark");
-      } else {
-        btn.textContent = "☀️ Modo claro";
-        btn.classList.remove("btn-dark");
-        btn.classList.add("btn-light");
-      }
+    
+    if (theme === "light") {
+      btn.textContent = "Modo oscuro";
+      btn.classList.remove("btn-light");
+      btn.classList.add("btn-dark");
+    } else {
+      btn.textContent = "Modo claro";
+      btn.classList.remove("btn-dark");
+      btn.classList.add("btn-light");
     }
 
     
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
+    if (vendlyLogo) {
+      vendlyLogo.src = theme === "dark"
+        ? vendlyLogo.dataset.dark
+        : vendlyLogo.dataset.light;
+    }
+  }
 
-    
-    btn.addEventListener("click", () => {
-      const current = htmlEl.getAttribute("data-bs-theme");
-      const newTheme = current === "light" ? "dark" : "light";
-      setTheme(newTheme);
-    });
+  
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme);
+
+ 
+  btn.addEventListener("click", () => {
+    const current = htmlEl.getAttribute("data-bs-theme");
+    const newTheme = current === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  });
 </script>
+
   
 <script>
   AOS.init({ duration: 1000, once: true });
@@ -330,6 +355,7 @@
 
 </body>
 </html>
+
 
 
 
